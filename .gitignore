@@ -4,3 +4,6 @@
 *node_modules*
 .env
 blockchain-env/lib/python3.7
+
+# temporary
+frontend/
