@@ -1,4 +1,5 @@
 import time
+from decouple import config
 from pubnub.pubnub import PubNub
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.callbacks import SubscribeCallback
@@ -6,8 +7,8 @@ from backend.blockchain.block import Block
 from backend.wallet.transaction import Transaction
 
 pnconfig = PNConfiguration()
-pnconfig.subscribe_key = 'sub-c-6ef347e0-6e0f-11ec-8750-065127b61789'
-pnconfig.publish_key = 'pub-c-551c7670-24e5-427c-8e73-e729878ea512'
+pnconfig.subscribe_key = config('SUBSCRIBE_KEY')
+pnconfig.publish_key = config('PUBLISH_KEY')
 
 CHANNELS = {
     'TEST': 'TEST',
